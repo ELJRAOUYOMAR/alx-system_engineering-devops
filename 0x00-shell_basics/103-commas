@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -ap1 | grep -E -v "/$" | sort -d | sed '1i\.\\.\.'
+ls -amvp
