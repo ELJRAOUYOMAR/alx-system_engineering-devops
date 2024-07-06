@@ -39,7 +39,7 @@ The OSI (Open Systems Interconnection) model is a conceptual framework used to u
 - Protocols and Devices: HTTP, FTP, SMTP, DNS.
 - Examples: Web browsers, email clients.
 
-### How the OSI Model Works
+## How the OSI Model Works
 1. Data Encapsulation: As data moves down from the application layer to the physical layer, each layer adds its own header (and sometimes trailer) to the data. This process is known as encapsulation.
 2. Data Transmission: At the physical layer, the data is transmitted over the physical medium to the receiving device.
 3. Data Decapsulation: As data moves up from the physical layer to the application layer in the receiving device, each layer removes its corresponding header (and trailer) to process the data.
