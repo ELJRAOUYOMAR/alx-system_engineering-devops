@@ -3,6 +3,7 @@
 
 - [Network basics](#network-basics)
 - [What is an IP address](#What-is-an-IP-address)
+- [TCP/IP protocol](#What-is-TCP-IP)
 # Network basics
 
 ## What is a protocol
@@ -113,4 +114,70 @@ When a device wants to communicate with another device over the internet or a ne
 
 IP addresses are crucial for the functioning of the internet and computer networks, enabling the identification and location of devices, and ensuring the proper routing and delivery of data.
 
+# what-is-TCP-IP
 
+TCP/IP stands for Transmission Control Protocol/Internet Protocol. TCP/IP is a set of standardized rules that allow computers to communicate on a network such as the internet.  It specifies how data should be packetized, addressed, transmitted, routed, and received. TCP/IP is the foundational protocol suite of the internet and most local area networks (LANs).
+
+## Components of TCP/IP
+
+1. Internet Protocol (IP)
+- Function: Responsible for addressing and routing packets of data so that they can travel across networks and arrive at the correct destination.
+- Versions: IPv4 and IPv6.
+### Key Concepts:
+- IP Address: A unique identifier for each device on a network.
+- Subnetting: Dividing a network into smaller sub-networks.
+- Routing: Determining the best path for data to travel from source to destination.
+
+2. Transmission Control Protocol (TCP)
+- Function: Provides reliable, ordered, and error-checked delivery of data between applications running on hosts communicating via an IP network.
+### Key Features:
+- Connection-oriented: Establishes a connection before transmitting data.
+- Reliable: Ensures data is delivered accurately and in order.
+- Flow Control: Manages data transmission rate between sender and receiver.
+- Error Correction: Detects and retransmits lost or corrupted data.
+
+## Layers of the TCP/IP Model
+The TCP/IP model consists of four layers, which correspond closely to layers in the OSI model:
+
+1.Network Interface Layer (Link Layer):
+
+- Equivalent OSI Layers: Physical and Data Link layers.
+- Function: Handles the physical transmission of data over a network and includes protocols such as Ethernet and Wi-Fi.
+
+2. Internet Layer:
+
+- Equivalent OSI Layer: Network layer.
+- Function: Responsible for addressing, routing, and packaging data for transfer between networks. Key protocols include IP, ICMP (Internet Control Message Protocol), and ARP (Address Resolution Protocol).
+
+3. Transport Layer:
+
+- Equivalent OSI Layer: Transport layer.
+- Function: Provides end-to-end communication services for applications. Key protocols include TCP and UDP (User Datagram Protocol).
+
+4. Application Layer:
+
+- Equivalent OSI Layers: Session, Presentation, and Application layers.
+- Function: Provides network services directly to applications. Protocols include HTTP, FTP, SMTP, and DNS.
+
+## How TCP/IP Works
+1. Application Layer: An application (e.g., web browser) sends a request to the network.
+2. Transport Layer: TCP divides the request into packets, adds sequencing and error-checking information, and establishes a connection with the destination.
+3. Internet Layer: IP handles addressing and routing, ensuring each packet is sent to the correct destination.
+4. Network Interface Layer: The packets are transmitted over the physical network (e.g., Ethernet cable, Wi-Fi).
+
+On the receiving end:
+
+1. Network Interface Layer: Receives the packets from the network.
+2. Internet Layer: IP checks the addressing and routes the packets to the appropriate destination.
+3. Transport Layer: TCP reassembles the packets in the correct order and checks for errors.
+4. Application Layer: The application processes the data and presents it to the user.
+
+## Example of TCP/IP in Action
+- Web Browsing: When you enter a URL in a web browser:
+1. HTTP (Application Layer): The browser sends an HTTP request.
+2. TCP (Transport Layer): TCP divides the HTTP request into segments and establishes a connection with the web server.
+3. IP (Internet Layer): IP addresses and routes the segments to the web server.
+4. Ethernet/Wi-Fi (Network Interface Layer): The segments are transmitted over the internet.
+5. Reverse Process: The web server processes the request, sends the response back, and the browser displays the webpage.
+
+TCP/IP is essential for internet and network communications, providing a reliable and standardized way for devices to exchange data.
