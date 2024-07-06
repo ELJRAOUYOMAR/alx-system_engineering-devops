@@ -120,7 +120,7 @@ TCP/IP stands for Transmission Control Protocol/Internet Protocol. TCP/IP is a s
 
 ## Components of TCP/IP
 
-1. Internet Protocol (IP)
+1. ### Internet Protocol (IP)
 - Function: Responsible for addressing and routing packets of data so that they can travel across networks and arrive at the correct destination.
 - Versions: IPv4 and IPv6.
 ### Key Concepts:
@@ -128,7 +128,7 @@ TCP/IP stands for Transmission Control Protocol/Internet Protocol. TCP/IP is a s
 - Subnetting: Dividing a network into smaller sub-networks.
 - Routing: Determining the best path for data to travel from source to destination.
 
-2. Transmission Control Protocol (TCP)
+2. ### Transmission Control Protocol (TCP)
 - Function: Provides reliable, ordered, and error-checked delivery of data between applications running on hosts communicating via an IP network.
 ### Key Features:
 - Connection-oriented: Establishes a connection before transmitting data.
