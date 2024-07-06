@@ -10,31 +10,31 @@
 A network protocol is a set of rules and conventions for communication between network devices, including computers, servers, routers and virtual machines.
 These protocols define how data is formatted, transmitted, and processed, ensuring that devices from different manufacturers and with different configurations can communicate effectively.
 The OSI (Open Systems Interconnection) model is a conceptual framework used to understand and implement network protocols in seven distinct layers. Each layer serves a specific function and communicates with the layers directly above and below it.Here’s a breakdown of how the OSI model works:
-1. Physical Layer
+1. ### Physical Layer
 - Function: Transmits raw bit streams over a physical medium.
 - Protocols and Devices: Cables, switches, NICs (Network Interface Cards).
 - Examples: Ethernet cables, fiber optics.
-2. Data Link Layer
+2. ### Data Link Layer
 - Function: Provides node-to-node data transfer and handles error correction from the physical layer.
 - Protocols and Devices: MAC (Media Access Control), ARP (Address Resolution Protocol), switches.
 - Examples: Ethernet, PPP (Point-to-Point Protocol).
-3. Network Layer
+3. ### Network Layer
 - Function: Determines the best physical path for data to reach its destination.
 - Protocols and Devices: IP (Internet Protocol), routers.
 - Examples: IPv4, IPv6.
-4. Transport Layer
+4. ### Transport Layer
 - Function: Provides reliable data transfer services to the upper layers.
 - Protocols and Devices: TCP (Transmission Control Protocol), UDP (User Datagram Protocol).
 - Examples: TCP, UDP.
-5. Session Layer
+5. ### Session Layer
 - Function: Manages sessions between applications. It establishes, manages, and terminates connections.
 - Protocols and Devices: APIs, sockets.
 - Examples: NetBIOS, PPTP (Point-to-Point Tunneling Protocol).
-6. Presentation Layer
+6. ### Presentation Layer
 - Function: Translates data between the application layer and the network format. It handles data encryption - and decryption, compression, and translation.
 - Protocols and Devices: SSL/TLS (Secure Sockets Layer/Transport Layer Security).
 - Examples: JPEG, ASCII, EBCDIC.
-7. Application Layer
+7. ### Application Layer
 - Function: Provides network services directly to applications.
 - Protocols and Devices: HTTP, FTP, SMTP, DNS.
 - Examples: Web browsers, email clients.
