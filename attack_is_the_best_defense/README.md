@@ -4,6 +4,7 @@
 - [Network basics](#network-basics)
 - [What is an IP address](#What-is-an-IP-address)
 - [TCP/IP protocol](#What-is-TCP-IP)
+- [Network sniffing](#Network-sniffing)
 # Network basics
 
 ## What is a protocol
@@ -181,3 +182,30 @@ On the receiving end:
 **5. Reverse Process**: The web server processes the request, sends the response back, and the browser displays the webpage.
 
 TCP/IP is essential for internet and network communications, providing a reliable and standardized way for devices to exchange data.
+
+# Network-sniffing
+
+## Definition
+**1.** Wireshark is an open-source application that captures and displays data traveling back and forth on a network.
+**2.** Network sniffing, also known as packet sniffing, is a technique used to monitor and capture data packets traveling over a network. This can be done for legitimate purposes such as network troubleshooting and performance monitoring, or for malicious activities like eavesdropping on communications to steal sensitive information.
+
+Key points about network sniffing include:
+
+**1. Tools:** There are various software tools available for sniffing, such as [Wireshark](https://www.lifewire.com/wireshark-tutorial-4143298), tcpdump, and Ettercap.
+**2. Promiscuous Mode:** Network interface cards (NICs) are often set to promiscuous mode to capture all packets on the network segment, not just those addressed to the NIC.
+**3. Legitimate Uses:** Network administrators use sniffers to diagnose network problems, ensure network security, and monitor network performance.
+**4. Malicious Uses:** Attackers can use sniffers to capture sensitive information like usernames, passwords, and credit card numbers from network traffic.
+**5. Detection:** Detecting sniffers on a network can be challenging but not impossible. Methods include sending non-broadcast packets and monitoring for network interface cards in promiscuous mode.
+
+## How Network Sniffing Works
+
+Network sniffing involves placing a network interface card [(NIC)](https://www.lifewire.com/definition-of-nic-817866) into promiscuous mode, which allows it to capture all packets on the network segment, regardless of their intended destination. Specialized software tools, such as Wireshark, tcpdump, and Ettercap, are then used to collect and analyze these packets. 
+
+To prevent unauthorized sniffing, network administrators should implement encryption protocols (e.g., SSL/TLS), use secure authentication methods, and regularly monitor network traffic for anomalies.
+
+Understanding network sniffing is essential for maintaining the security and integrity of network communications, whether for protecting against threats or ensuring smooth network operations.
+
+
+
+
+
