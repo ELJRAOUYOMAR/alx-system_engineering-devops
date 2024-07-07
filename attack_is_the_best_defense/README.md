@@ -5,6 +5,8 @@
 - [What is an IP address](#What-is-an-IP-address)
 - [TCP/IP protocol](#What-is-TCP-IP)
 - [Network sniffing](#Network-sniffing)
+- [ARP spoofing](#ARP-spoofing)
+
 # Network basics
 
 ## What is a protocol
@@ -98,6 +100,7 @@ An IP address (Internet Protocol address) is a unique identifier assigned to eac
 
 ### Subnetting
 Subnetting is the practice of dividing a network into smaller, more manageable sub-networks (subnets). It helps improve network performance and security. A subnet mask is used to determine the network and host portions of an IP address.
+[subnet mask](subnet_mask.png)
 
 ### Example: IP Address Breakdown
 **- IP Address**: 192.168.1.10
@@ -205,7 +208,32 @@ To prevent unauthorized sniffing, network administrators should implement encryp
 
 Understanding network sniffing is essential for maintaining the security and integrity of network communications, whether for protecting against threats or ensuring smooth network operations.
 
+# ARP-spoofing
+
+## Introduction
+ARP (Address Resolution Protocol) spoofing, also known as ARP poisoning, is a type of attack in which a malicious actor sends falsified ARP messages over a local area network. This results in the attacker’s MAC address being associated with the IP address of another device (e.g., the default gateway), causing any traffic meant for that IP address to be sent to the attacker instead. This enables the attacker to intercept, modify, or block communication between devices on the network.
+
+## How ARP Spoofing Works
+
+[ARP Spoofing](arp_spoofing.png)
+
+**1. ARP Basics:** ARP is a protocol used for mapping an IP address to a physical machine (MAC) address in a local network. When a device wants to communicate with another device on the same network, it uses ARP to find the MAC address associated with the destination IP address.
+**2. Spoofing Process:**
+    **Step 1:** The attacker sends ARP reply packets containing fake MAC addresses to the target devices on the network. These packets claim that the attacker's MAC address should be associated with the IP address of a legitimate device (e.g., the default gateway or another target device).
+    **Step 2:** The target devices update their ARP cache with the incorrect information, causing them to send traffic intended for the legitimate device to the attacker's machine instead.
 
 
+## Effects and Risks
+The effects of ARP spoofing attacks can have serious implications for enterprises. In their most basic application, ARP spoofing attacks are used to steal sensitive information. Beyond this, ARP spoofing attacks are often used to facilitate other attacks such as:
+**- Man-in-the-Middle Attacks:** The attacker can intercept and potentially modify the data passing between two devices. This can include sensitive information such as login credentials, credit card numbers, and personal communications.
+**- Denial of Service (DoS):** By associating their MAC address with multiple IP addresses, an attacker can disrupt the normal traffic flow in the network, effectively causing a DoS.
+**- Session Hijacking:** The attacker can take over an active session by intercepting session cookies and tokens.
 
+## Detection and Prevention
+**- Static ARP Entries:** Configure static ARP entries for critical devices on the network to prevent ARP spoofing attacks.
+**- ARP Inspection:** Implement Dynamic ARP Inspection (DAI) on network switches to validate ARP packets.
+Encryption: Use encrypted communication protocols (e.g., HTTPS, SSH) to protect data even if it is intercepted.
+**- Monitoring Tools:** Employ network monitoring tools to detect unusual ARP traffic and changes in MAC address mappings.
+
+ARP spoofing is a serious security threat that can compromise the confidentiality and integrity of network communications. By understanding how it works and implementing appropriate countermeasures, network administrators can protect their networks from such attacks.
 
