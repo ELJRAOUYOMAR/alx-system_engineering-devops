@@ -60,7 +60,7 @@ Server B (weight 1): 1 request
 
 there is hardware and software load balancer, chack here [hardware load balancer and software load balancer](https://www.thegeekstuff.com/2016/01/load-balancer-intro/)
 
-# HAProxy
+# HAProxy 
 
 ## introduction
 HAProxy (High Availability Proxy) is a free, open-source software that provides a high availability load balancer and proxy server for TCP and HTTP-based applications. It's known for its performance, reliability, and advanced features.
@@ -94,10 +94,102 @@ HAProxy (High Availability Proxy) is a free, open-source software that provides 
 **5. Security:** Provides features like rate limiting, access control lists (ACLs), and DoS attack mitigation.
 **6. Logging and Monitoring:** Detailed logging and metrics for monitoring traffic and server health.
 
-## HAProxy Terminology
+# HAProxy Terminology
 There are many terms and concepts that are important when discussing load balancing and proxying. You’ll go over commonly used terms in the following subsections.
 Before you get into the basic types of load balancing, you should begin with a review of ACLs, backends, and frontends.
 ### Access Control List (ACL)
+Access Control Lists (ACLs) in HAProxy are used to define rules for controlling traffic based on various criteria. ACLs allow you to inspect, filter, and route traffic based on different attributes of the requests, such as source IP address, URL path, HTTP headers, and more.
+
+```sh
+            Client Requests
+                        |
+                        v
+                    +------------+
+                    |   HAProxy  |
+                    |  +--------+|
+                    |  |  ACL   ||
+                    |  +----+---+|
+                    |       |    |
+            +-------+-------+------+--------+
+            | Match Criteria 1  |  Match Criteria 2 |
+            +-------+-------+------+--------+
+                    |                      |
+            Action (Allow, Deny, Redirect)  Action (Allow, Deny, Redirect)
+```
+
+#### Basic ACL Syntax 
+```sh
+acl <name> <condition>
+```
+
+#### Example 1: Allowing Traffic from Specific IPs
+```sh
+frontend http_front
+    bind *:80
+
+    acl allowed_ips src 192.168.1.0/24
+    acl allowed_ips src 10.0.0.0/8
+
+    http-request deny if !allowed_ips
+
+    default_backend http_back
+```
+In this example:
+
+- acl allowed_ips src 192.168.1.0/24 and acl allowed_ips src 10.0.0.0/8 define two ACLs that match requests coming from specific IP ranges.
+- http-request deny if !allowed_ips denies requests that do not match the allowed_ips ACLs.
+
+#### Example 2: Redirecting Based on URL Path
+```sh
+frontend http_front
+    bind *:80
+
+    acl is_admin_path path_beg /admin
+    acl is_user_path path_beg /user
+
+    use_backend admin_back if is_admin_path
+    use_backend user_back if is_user_path
+
+    default_backend http_back
+```
+
+In this example:
+
+- acl is_admin_path path_beg /admin defines an ACL that matches requests with URLs starting with /admin.
+- acl is_user_path path_beg /user defines an ACL that matches requests with URLs starting with /user.
+- use_backend admin_back if is_admin_path routes requests matching the is_admin_path ACL to the admin_back backend.
+- use_backend user_back if is_user_path routes requests matching the is_user_path ACL to the user_back backend.
+
+#### Example 3: Restricting Access Based on HTTP Method
+```sh
+frontend http_front
+    bind *:80
+
+    acl is_post_method method POST
+    acl is_put_method method PUT
+
+    http-request deny if is_post_method
+    http-request deny if is_put_method
+
+    default_backend http_back
+```
+In this example:
+
+- acl is_post_method method POST defines an ACL that matches requests using the POST method.
+- acl is_put_method method PUT defines an ACL that matches requests using the PUT method.
+- http-request deny if is_post_method denies requests matching the is_post_method ACL.
+- http-request deny if is_put_method denies requests matching the is_put_method ACL.
+
+ACLs in HAProxy provide a powerful mechanism to control and filter traffic based on various criteria. By using ACLs, you can create complex traffic routing and filtering rules to meet your specific needs, improving security, performance, and flexibility in handling requests.
+
+### backend
+
+
+
+
+
+
+
 
 
 ## Basic HAProxy Configuration
