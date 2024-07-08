@@ -16,7 +16,7 @@
 
 ## introduction to load balancing
 
-[load balancing concept](imgs/load_balancer.png)
+![load balancing concept](imgs/load_balancer.png)
 Load balancing is a technique used to distribute incoming network traffic across multiple servers to ensure no single server becomes overwhelmed with too much traffic. This improves the responsiveness and availability of applications, websites, and databases.
 
 ## Key Benefits of Load Balancing
@@ -34,29 +34,29 @@ Client 2 -> Server B
 Client 3 -> Server C
 Client 4 -> Server A
 ```
-[round robin 1](imgs/round_robin.png)
+![round robin 1](imgs/round_robin.png)
 
 **2. Least Connections:** Sends requests to the server with the fewest active connections.
 ```sh Server A: 2 connections
 Server B: 3 connections
 Client -> Server A
 ```
-[least connection 1](imgs/least_connection.png)
-[least connection 2](imgs/Least-Connections-2.gif)
+![least connection 1](imgs/least_connection.png)
+![least connection 2](imgs/Least-Connections-2.gif)
 
 **3. IP Hash:** Uses the client’s IP address to determine which server will receive the request
 ```sh
 Client IP 192.168.1.1 -> Server A
 Client IP 192.168.1.2 -> Server B
 ```
-[IP Hash](imgs/IP-Hash.gif)
+![IP Hash](imgs/IP-Hash.gif)
 
 **4. Weighted Round Robin:** Assigns weights to each server based on their capacity and directs more traffic to higher-capacity servers.
 ```sh
 Server A (weight 2): 2 requests
 Server B (weight 1): 1 request
 ```
-[round robin 2](imgs/round_robin_1.gif)
+![round robin 2](imgs/round_robin_1.gif)
 
 there is hardware and software load balancer, chack here [hardware load balancer and software load balancer](https://www.thegeekstuff.com/2016/01/load-balancer-intro/)
 
