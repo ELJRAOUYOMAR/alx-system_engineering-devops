@@ -1,4 +1,4 @@
-# Load balancer
+# Load balancer.
 
 - [Load balancing](#load-balancing)
 -   [Introduction to load balancing](#introduction-to-load-balancing)
