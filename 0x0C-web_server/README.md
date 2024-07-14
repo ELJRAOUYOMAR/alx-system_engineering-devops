@@ -3,7 +3,12 @@
 ## Ressources
 - [What is a Child Process?](#What-is-a-Child-Process?)
 -[How the web works](#https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works)
--[How to Configure Nginx]()
+-[How to Configure Nginx](https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-16-04)
+- [Root and sub domain](https://landingi.com/help/domains-vs-subdomains/)
+- [HTTP requests](https://www.tutorialspoint.com/http/http_methods.htm)
+- [HTTP redirection](https://moz.com/learn/seo/redirection)
+- [Not found HTTP response code](https://en.wikipedia.org/wiki/HTTP_404)
+- [Logs files on Linux](https://www.cyberciti.biz/faq/ubuntu-linux-gnome-system-log-viewer/)
 
 ## What is a Child Process?
 Although it may sound like something out of a parenting handbook or a psychological journal, the term child process actually has nothing to do with human development. If you run a Unix or Linux dedicated server, you have likely encountered child processes without even knowing it. Therefore, it is good to know what child processes are and how they work.
