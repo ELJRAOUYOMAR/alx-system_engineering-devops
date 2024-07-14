@@ -1,4 +1,4 @@
-#  Web Server
+#  Web Server.
 
 ## Ressources
 - [What is a Child Process?](#What-is-a-Child-Process?)
