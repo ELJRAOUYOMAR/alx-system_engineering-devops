@@ -20,3 +20,4 @@ ufw allow http
 ufw allow https
 
 echo 'y' | sudo ufw enable
+
